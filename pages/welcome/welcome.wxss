@@ -1,0 +1,14 @@
+/* pages/welcome.wxss */
+
+.login-img {
+  margin: 0 auto; /*左右居中*/
+  width: 400rpx;
+  height: 133rpx;
+}
+
+.company-name {
+  position: absolute;
+  bottom: 12rpx;
+  color: #8c8c8c;
+  font-size: 12px;
+}

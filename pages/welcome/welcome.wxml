@@ -1,0 +1,7 @@
+<!--pages/login/login.wxml-->
+<view class="container">
+  <image class="login-img" src="/images/logo.png"></image>
+</view>
+<view class="container">
+  <view class="company-name">@上海怡道信息科技有限公司</view>
+</view>
