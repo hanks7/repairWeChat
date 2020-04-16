@@ -32,7 +32,7 @@
 
       <!--按钮-->
       <view class="loginBtnView">
-        <button class="loginBtn" size="{{primarySize}}" form-type='submit' disabled='{{disabled}}'>登录</button>
+        <button class="loginBtn"  hover-class="loginBtn-pressed" size="{{primarySize}}" form-type='submit'  >登录</button>
       </view>
     </form>
 

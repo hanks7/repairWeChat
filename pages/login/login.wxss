@@ -74,6 +74,17 @@ page {
   border-radius: 40rpx;
 }
 
+.loginBtn-pressed {
+  width: 90%;
+  height: 80rpx;
+  line-height: 80rpx;
+  margin-top: 35px;
+  color: #fff;
+  background-color: #ccc;
+  border: 0.1rpx solid #ccc;
+  border-radius: 40rpx;
+}
+
 .nameImage, .keyImage {
   margin-right: 10px;
   width: 14px;
