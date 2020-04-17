@@ -2,8 +2,8 @@
 
 .login-img {
   margin: 0 auto; /*左右居中*/
-  width: 400rpx;
-  height: 133rpx;
+  width: 300rpx;
+  height: 100rpx;
 }
 
 .company-name {

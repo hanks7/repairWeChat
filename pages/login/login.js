@@ -38,7 +38,13 @@ Page({
       });
     }
   },
+  intentPage: function() {
+    wx.switchTab({
+      url: "../home/home"
+    });
+  },
   formSubmit: function(e) {
+    var that=this;
     wx.showLoading({
       title: '登录中...',
     });
@@ -50,8 +56,11 @@ Page({
         title: "登录成功等待跳转下一个界面",
         icon: 'none',
         duration: 2000
-      })
+      });
+      that.intentPage();
     }, 1000);
+
+
 
     return;
     // this.setData({
