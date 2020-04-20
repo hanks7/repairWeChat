@@ -21,7 +21,7 @@
     "list": [
       {
         "pagePath": "pages/home/home",
-        "text": "阅读",
+        "text": "首页",
         "selectedIconPath": "images/home_image_blue.png",
         "iconPath": "images/home_image_grey.png"
       },

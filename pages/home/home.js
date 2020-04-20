@@ -1,71 +1,150 @@
 Page({
-
+  dataList1: [
+    "2aaa",
+    "123aaa",
+    "12321",
+    "aaaaa",
+    "aaa12312aa",
+    "333",
+    "21312",
+    "123",
+    "aaaaa",
+    "千万一百二十三",
+    "aaaaa",
+    "aaaaa",
+    "aaaaa",
+    "bbbbb"
+  ],
+  dataList0: [
+    "111",
+    "222",
+    "33",
+    "44",
+    "55",
+    "66",
+    "77",
+    "88",
+    "99",
+    "00",
+    "1111",
+    "112",
+    "113",
+    "114"
+  ],
   /**
    * 页面的初始数据
    */
   data: {
-    navbarActiveIndex: 0,
-    navbarTitle: [
-      "所有工单",
-      "我的工单"
-    ],
-    dataList: [
-      "aaaaa",
-      "aaaaa",
-      "aaaaa",
-      "aaaaa",
-      "aaaaa",
-      "aaaaa",
-      "aaaaa",
-      "aaaaa",
-      "aaaaa",
-      "aaaaa",
-      "aaaaa",
-      "aaaaa",
-      "aaaaa",
-      "bbbbb"
-    ]
+    arryList: [],
+    swiperNav: {　　
+      i: 0,
+      　　arr: [　　　{
+          v: 0,
+          txt: "所有工单"
+        }, 　　　
+        {
+          v: 1,
+          txt: "医院工单"
+        }, 　　　
+        {
+          v: 2,
+          txt: "公司派单"
+        }, 　　　
+        {
+          v: 3,
+          txt: "需要确认的工单"
+        }, 　　　
+        {
+          v: 4,
+          txt: "历史工单"
+        }　　
+      ]　
+    }
   },
 
-  /**
-   * 点击导航栏
-   */
-  onNavBarTap: function(event) {
-    // 获取点击的navbar的index
-    let navbarTapIndex = event.currentTarget.dataset.navbarIndex
-    // 设置data属性中的navbarActiveIndex为当前点击的navbar
+  onLoad: function(options) {
+
     this.setData({
-      navbarActiveIndex: navbarTapIndex
-    })
+      arryList: this.dataList0
+    });
   },
 
-  /**
-   * 
-   */
-  onBindAnimationFinish: function( detail ) {
-    // 设置data属性中的navbarActiveIndex为当前点击的navbar
-    this.setData({
-      navbarActiveIndex: detail.current
-    })
+  swiperNav: function(e) {　
+
+    var that = this;
+
+    this.setData({　　
+      'swiperNav.i': e.target.dataset.i　
+    });
+
+
+
+  },
+  swiperNav: function(e) {　
+    console.log(e);　 /*获取可视窗口宽度*/ 　
+    var w = wx.getSystemInfoSync().windowWidth;　
+    var leng = this.data.swiperNav.arr.length;　
+    var i = e.target.dataset.i;　
+    var disX = (i - 1) * w / leng;　
+    if (i != this.data.swiperNav.i) {　　
+      this.setData({　　　
+        'swiperNav.i': i　　
+      })　
+    }　
+    this.setData({　　
+      'swiperNav.x': disX　
+    });
+    var that = this;
+    console.log("e.target.dataset.i");　
+    console.log(e.target.dataset.i);　
+    switch (e.target.dataset.i) {
+      case 0:
+        this.setData({
+          arryList: that.dataList0
+
+        });
+        break;
+
+      case 1:
+        this.setData({
+          arryList: that.dataList1
+
+        });
+        break;
+
+
+    }
   },
 
   onReachBottom() {
-    var arr = this.data.dataList;
-    if (this.data.dataList.count > 13) {
-      for (var i = 0; i <8; i++) {
-        var t=i+"uuuuuu";
+    var arr = this.data.arryList;
+
+    if (arr.length < 100) {
+      for (var i = 0; i < 18; i++) {
+        var t = i + "uuuuuu";
         arr.push(t);
       }
       this.setData({
         dataList: arr
-         
+
       });
     } else {
       wx.showToast({
         title: '没有更多数据了！',
-        image: '../../src/images/noData.png',
+
       })
     }
+  },
+  //js的代码
+  onPullDownRefresh: function (event) {
+    wx.showNavigationBarLoading();
+ 
+
+    setTimeout(function () {
+      console.log("setTimeout");
+      wx.hideNavigationBarLoading();
+      wx.stopPullDownRefresh();
+    }, 3000);
   }
 
 

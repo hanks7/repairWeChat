@@ -1,45 +1,47 @@
-.movie-container {
-  display: flex;
-  flex-direction: column;
-}
-
-.navbar {
-  display: flex;
-  position: absolute;
-  left: 0;
-  top: 0;
-  z-index: 500;
-  width: 100%;
-  height: 50px;
-  flex-direction: row;
-  text-align: center;
-  color: #a8a8a8;
-  font-size: 15px;
-  box-sizing: border-box;
-  background-color: #fff;
-  border-bottom: 1rpx solid #dfdfdf;
-}
-
-.navbar-item {
-  flex: 1;
-  padding: 26rpx 0px;
-}
-
-.navbar-item-active {
-  transition: all 0.3s;
-  border-bottom: 5rpx solid #1387e6;
-  color: #1387e6;
-}
-
-.movie-content-wrapper {
-  padding-top: 50px;
-}
-
 page {
-  background-color: red;
+  background-color: #efefef;
+}
+
+/*横向导航*/
+
+.swiper-nav {
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+  white-space: nowrap;
+}
+
+.swiper-nav .item-nav {
+  position: relative;
+  padding: 30rpx 32rpx;
+  color: #999;
+  font-size: 30rpx;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.swiper-nav .active {
+  color: #1387E6;
+}
+
+.swiper-nav .active::after {
+  content: '';
+  position: absolute;
+  left: 32rpx;
+  right: 32rpx;
+  height: 0;
+  border-bottom: 4rpx solid #1387E6;
+  border-radius: 4rpx;
+  bottom: 18rpx;
 }
 
 .tui-menu-list {
-  height: 100rpx;
-  background-color: green;
+  padding: 120rpx;
+  background-color: white;
+}
+
+/*选取偶数标签*/
+
+.tui-menu-list:nth-child(2n) {
+  background-color: gray;
 }
