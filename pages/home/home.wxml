@@ -1,3 +1,6 @@
+<import src="../template/template-listview-item.wxml" />
+
+
 <view class="movie-container">
   <!-- 导航栏 -->
   <scroll-view scroll-x class='swiper-nav' scroll-left='{{swiperNav.x}}' scroll-with-animation='true' bindtap='swiperNav'>
@@ -7,6 +10,6 @@
 
 
   <view class="tui-content">
-    <view class="tui-menu-list" wx:for="{{arryList}}">Item -- {{item}}</view>
+    <template is="template-listview-item" data="{{arryList}}" />
   </view>
 </view>

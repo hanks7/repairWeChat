@@ -147,6 +147,12 @@ Page({
       wx.hideNavigationBarLoading();
       wx.stopPullDownRefresh();
     }, 3000);
+  },
+  //listview点击事件
+  onItemClickListener(event) {
+    wx.navigateTo({
+      url: "../orderDetail/orderDetail"
+    });
   }
 
 

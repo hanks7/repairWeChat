@@ -1,3 +1,5 @@
+@import "../template/template-listview-item.wxss";
+
 page {
   background-color: #efefef;
 }
@@ -33,16 +35,4 @@ page {
   border-bottom: 4rpx solid #1387e6;
   border-radius: 4rpx;
   bottom: 18rpx;
-}
-
-.tui-menu-list {
-  cursor: pointer;
-  padding: 70rpx;
-  background-color: white;
-}
-
-/*选取偶数标签*/
-
-.tui-menu-list:nth-child(2n) {
-  background-color: gray;
 }
