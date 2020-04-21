@@ -118,6 +118,8 @@ Page({
 
   onReachBottom() {
     var arr = this.data.arryList;
+    console.log("arr.length");
+    console.log(arr.length);
 
     if (arr.length < 100) {
       for (var i = 0; i < 18; i++) {
@@ -125,7 +127,7 @@ Page({
         arr.push(t);
       }
       this.setData({
-        dataList: arr
+        arryList: arr
 
       });
     } else {

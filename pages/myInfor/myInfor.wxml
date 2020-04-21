@@ -1,8 +1,9 @@
 <!--pages/myInfor/myInfor.wxml-->
 <view class="main">
-    <image class="headimg" src="/images/logo.png"></image>
-    <text class="motto">Hello, 七月</text>
-    <view class="journey-container" bindtap="onTap" >
-        <text class="journey"  >开启小程序之旅</text>
-    </view>
+  <image class="headimg" mode="aspectFit" src="/images/logo.png"></image>
+  <text class="style-text name" >登录人姓名</text>
+  <text class="style-text journey">登录人的账号</text>
 </view>
+
+<view class="item" bindtap="clickIntentMyorder">我的订单</view>
+<view class="item">公司派单</view>

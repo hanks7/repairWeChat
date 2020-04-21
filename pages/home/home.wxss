@@ -21,7 +21,7 @@ page {
 }
 
 .swiper-nav .active {
-  color: #1387E6;
+  color: #1387e6;
 }
 
 .swiper-nav .active::after {
@@ -30,13 +30,14 @@ page {
   left: 32rpx;
   right: 32rpx;
   height: 0;
-  border-bottom: 4rpx solid #1387E6;
+  border-bottom: 4rpx solid #1387e6;
   border-radius: 4rpx;
   bottom: 18rpx;
 }
 
 .tui-menu-list {
-  padding: 120rpx;
+  cursor: pointer;
+  padding: 70rpx;
   background-color: white;
 }
 

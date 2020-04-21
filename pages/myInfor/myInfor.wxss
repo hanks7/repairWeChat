@@ -1,16 +1,26 @@
 /* pages/myInfor/myInfor.wxss */
 
 .main {
+  color: #727272;
   display: flex;
   flex-direction: column;
   align-items: center;
- 
   height: 240px;
   background-color: lightsteelblue;
 }
 
 .headimg {
   margin-top: 120rpx;
-  width: 120rpx;
   height: 120rpx;
+}
+.style-text{
+  margin-top: 12rpx;
+}
+
+.item {
+  cursor: pointer;
+  color: #727272;
+  padding-left: 24rpx;
+  border-bottom: 1rpx #d8d8d8 solid;
+  line-height: 120rpx;
 }
