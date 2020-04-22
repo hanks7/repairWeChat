@@ -1,0 +1,6 @@
+.tui-menu-list {
+  cursor: pointer;
+  padding: 20rpx;
+  background-color: white;
+  border-bottom: 1rpx solid #d8d8d8;
+}
