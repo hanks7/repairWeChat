@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/welcome/welcome",
     "pages/orderDetail/orderDetail",
+    "pages/welcome/welcome",
     "pages/myInfor/myInfor",
     "pages/login/login",
     "pages/index/index",

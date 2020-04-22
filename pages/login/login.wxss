@@ -69,7 +69,7 @@ page {
   line-height: 80rpx;
   margin-top: 35px;
   color: #fff;
-  background-color: #7e8ef0;
+  background-color: #006990;
   border: 0.1rpx solid #ccc;
   border-radius: 40rpx;
 }
@@ -80,8 +80,8 @@ page {
   line-height: 80rpx;
   margin-top: 35px;
   color: #fff;
-  background-color: #ccc;
-  border: 0.1rpx solid #ccc;
+  background-color: #004E6B;
+  border: 0.1rpx solid #004E6B;
   border-radius: 40rpx;
 }
 
