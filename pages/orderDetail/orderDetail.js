@@ -49,6 +49,7 @@ Page({
   },
   getInputValue(e) {
     console.log(e.detail)// {value: "ff", cursor: 2}  
-  }
+  },
+ 
 
 })

@@ -1,5 +1,5 @@
-<view class="tv-title"> 维修动态</view>
-   <view class='tv-problem-description'>问题描述</view>
+<view class="tv-title"> 问题描述</view>
+<view class='tv-problem-description'>问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述</view>
 
 
 <view class="cast">
@@ -34,43 +34,22 @@ https://blog.csdn.net/oschina_41661541/article/details/81217619?depth_1-utm_sour
   </block>
 </view>
 
-<form bindsubmit="formSubmit" bindreset="formReset">
-  <view class="section section_gap">
-    <view class="section__title">switch</view>
-    <switch name="switch" />
-  </view>
-  <view class="section section_gap">
-    <view class="section__title">slider</view>
-    <slider name="slider" show-value></slider>
+<form bindsubmit="formSubmit" id="formID" bindreset="formReset">
+
+ <view class="view-repair-state">
+  <textarea  class="input-repair-state" maxlength="100000" bindinput='getInputValue' name='input-repair-state' type='text' placeholder='请输入维修状态'>
+ 
+  </textarea >
   </view>
 
-  <view class="section">
-    <view class="section__title">input</view>
-    <input name="input" placeholder="please input here" />
-  </view>
-  <view class="section section_gap">
-    <view class="section__title">radio</view>
-    <radio-group name="radio-group">
-      <label>
-        <radio value="radio1" />radio1</label>
-      <label>
-        <radio value="radio2" />radio2</label>
-    </radio-group>
-  </view>
-  <view class="section section_gap">
-    <view class="section__title">checkbox</view>
-    <checkbox-group name="checkbox">
-      <label>
-        <checkbox value="checkbox1" />checkbox1</label>
-      <label>
-        <checkbox value="checkbox2" />checkbox2</label>
-    </checkbox-group>
-  </view>
-  <view class="btn-area">
-    <button formType="submit">Submit</button>
-    <button formType="reset">Reset</button>
+  <!--按钮-->
+  <view class="loginBtnView">
+    <button class="loginBtn" hover-class="loginBtn-pressed" formType="submit" from="formID">确定</button>
   </view>
 
-  <input  bindinput='getInputValue'  name='price1' type='text' placeholder='输入内容'></input>
-  <input  bindinput='getInputValue'  name='price2' type='text' placeholder='输入内容'></input>
+   <!--按钮-->
+  <view class="space">
+   
+  </view>
+
 </form>

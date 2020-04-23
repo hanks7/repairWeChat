@@ -6,7 +6,7 @@
   flex-direction: column;
   align-items: center;
   height: 240px;
-  background-color: lightsteelblue;
+  background-color: #b0c4de;
 }
 
 .headimg {

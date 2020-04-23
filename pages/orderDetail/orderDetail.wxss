@@ -7,11 +7,13 @@
 .tv-problem-description {
   font-size: 13px;
   color: green;
+  line-height: 40rpx;
   margin-left: 36rpx;
+  margin-right: 36rpx;
 }
 
 .cast {
-  margin-left: 40rpx;
+  margin-left: 36rpx;
   display: flex;
   flex-direction: column;
   margin-top: 50rpx;
@@ -58,7 +60,7 @@
 
 .weui-cell-list {
   background-color: red;
-  background: #ffffff;
+  background: #fff;
   margin: 5px 50px 5px 50px;
 }
 
@@ -99,4 +101,52 @@
   white-space: pre-line;
   overflow-wrap: break-word;
   margin: 12rpx 0;
+}
+
+.view-repair-state {
+  min-height: 120rpx;
+  margin: 24rpx;
+  padding: 22rpx;
+  border: 1rpx solid #d8d8d8;
+  vertical-align: top;
+  border-radius: 15rpx;
+}
+
+.input-repair-state {
+  width: 100%;
+}
+
+.loginBtnView {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+
+.loginBtn {
+  width: 90%;
+  height: 80rpx;
+  line-height: 80rpx;
+  margin-top: 35px;
+  color: #fff;
+  background-color: #006990;
+  border: 0.1rpx solid #ccc;
+  border-radius: 40rpx;
+  cursor: pointer;
+ 
+}
+
+.loginBtn-pressed {
+  width: 90%;
+  height: 80rpx;
+  line-height: 80rpx;
+  margin-top: 35px;
+  color: #fff;
+  background-color: #004e6b;
+  border: 0.1rpx solid #004e6b;
+  border-radius: 40rpx;
+}
+
+.space{
+  height: 300rpx;
+  width: 100%;
 }
