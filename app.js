@@ -1,5 +1,6 @@
 //app.js
 App({
+
   onLaunch: function () {
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
@@ -35,5 +36,10 @@ App({
   },
   globalData: {
     userInfo: null
+  },
+ 
+  url: {
+    BaseUrl: "http://172.16.0.51:8600/api/",
+    login: "http://172.16.0.51:8600/api/"+ "login" 
   }
 })

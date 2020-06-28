@@ -5,119 +5,94 @@ Page({
    * 页面的初始数据
    */
   data: {
-    disabled: false,
-    no: '',
-    pwd: '',
-    noinput: false,
-    pwdinput: false,
+   
   },
-  noinput: function(e) {
-    this.setData({
-      no: e.detail.value
-    });
-    this.setData({
-      noinput: true
-    });
-    if (this.data.noinput == true && this.data.pwdinput == true) {
-      this.setData({
-        disabled: false
-      });
-    }
-
-  },
-  pwdinput: function(e) {
-    this.setData({
-      pwd: e.detail.value
-    });
-    this.setData({
-      pwdinput: true
-    });
-    if (this.data.noinput == true && this.data.pwdinput == true) {
-      this.setData({
-        disabled: false
-      });
-    }
-  },
+  
   intentPage: function() {
     wx.switchTab({
       url: "../home/home"
     });
   },
   formSubmit: function(e) {
-    var that=this;
+    if (!e.detail.value.no) {
+      wx.showToast({
+        title: "请输入账号",
+        icon: 'none',
+        duration: 2000
+      })
+      return;
+    }
+    if (!e.detail.value.pwd) {
+      wx.showToast({
+        title: "请输入密码",
+        icon: 'none',
+        duration: 2000
+      })
+      return;
+    }
     wx.showLoading({
       title: '登录中...',
     });
 
-    setTimeout(function() {
-      console.log(e);
-      wx.hideLoading();
-      wx.showToast({
-        title: "登录成功等待跳转下一个界面",
-        icon: 'none',
-        duration: 2000
-      });
-      that.intentPage();
-    }, 1000);
+ 
 
+    wx.request({
+      url: app.url.login, //仅为示例，并非真实的接口地址
 
+      data: {
+        loginName: e.detail.value.no,
+        passWord: e.detail.value.pwd
+      },
+      method: 'POST',
+      header: {
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      success: function(res) {
+        console.log("----data");
+        console.log(res.data);
+        if (res.statusCode == 200) {
+          if (res.data.code == 200) {
 
-    return;
-    // this.setData({
-    //   disabled: true
-    // });
-    // wx.request({
-    //   url: app.globalData.url.login, //仅为示例，并非真实的接口地址
-    //   data: {
-    //     no: e.detail.value.no,
-    //     pwd: e.detail.value.pwd
-    //   },
-    //   header: {
-    //     'content-type': 'application/json' // 默认值
-    //   },
-    //   success: function(res) {
-    //     console.log(res);
-    //     if (res.statusCode == 200) {
-    //       if (res.data.error == true) {
-    //         wx.showToast({
-    //           title: res.data.msg,
-    //           icon: 'none',
-    //           duration: 2000
-    //         })
-    //       } else {
-    //         wx.setStorageSync('student', res.data.data);
-    //         wx.showToast({
-    //           title: res.data.msg,
-    //           icon: 'success',
-    //           duration: 2000
-    //         })
-    //         setTimeout(function() {
-    //           wx.switchTab({
-    //             url: '../teacher/teacher',
-    //           })
-    //         }, 2000)
-    //       }
-    //     } else {
-    //       wx.showToast({
-    //         title: '服务器出现错误',
-    //         icon: 'none',
-    //         duration: 2000
-    //       })
-    //     }
-    //   }
-    // })
+            wx.setStorageSync('user_info', res.data.data);
+            wx.showToast({
+              title: "登录成功",
+              icon: 'success',
+              duration: 2000
+            })
+            wx.switchTab({
+              url: '../home/home',
+            })
+          } else {
+            wx.showToast({
+              title: res.data.msg ? res.data.msg : "",
+              icon: 'none',
+              duration: 2000
+            })
+          }
+        } else {
+          wx.showToast({
+            title: '服务器出现错误',
+            icon: 'none',
+            duration: 2000
+          })
+        }
+      }
+    })
   },
+
+
+
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    this.setData({
-      disabled: false
-    });
-    var student = wx.getStorageSync('student');
-    if (typeof(student) == 'object' && student.no != '' && student.classid != '') {
+     
+    var userInfo = wx.getStorageSync('user_info');
+   
+    if (typeof (userInfo) == 'object' && userInfo.LoginName != '') {
       wx.switchTab({
-        url: '../teacher/teacher',
+        url: '../home/home',
       })
     }
   },
@@ -133,16 +108,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-    wx.hideHomeButton();
-    if (this.data.no == '' || this.data.pwd == '') {
-      this.setData({
-        disabled: true
-      });
-    } else {
-      this.setData({
-        disabled: false
-      });
-    }
+   
   },
 
   /**

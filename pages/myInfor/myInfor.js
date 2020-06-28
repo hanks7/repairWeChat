@@ -12,7 +12,12 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-
+    var userInfo = wx.getStorageSync('user_info');
+    console.log("userInfo");
+    console.log(userInfo);
+    this.setData({
+      userInfo: userInfo
+    })
   },
 
   /**
@@ -68,5 +73,20 @@ Page({
       url: "../myOrder/myOrder"
     });
   },
+
+  clickQuit(event){
+    wx.showModal({
+      title: '提示',
+      content: '是否退出登录',
+      success(res) {
+        if (res.confirm) {
+          //清理某个key的缓存
+          wx.removeStorageSync('user_info');
+          //下一页没有返回键,当前页销毁
+          wx.redirectTo({ url: "../login/login" });
+        }  
+      }
+    })
+  }
 
 })
