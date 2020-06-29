@@ -1,4 +1,5 @@
 // pages/login/login.js
+var http = require('../../utils/request.js'); //相对路径
 const app = getApp()
 Page({
   /**
@@ -34,53 +35,75 @@ Page({
       title: '登录中...',
     });
 
- 
+    // this.httpPost(e);
 
-    wx.request({
-      url: app.url.login, //仅为示例，并非真实的接口地址
+    var params = {//请求参数
+      loginName: e.detail.value.no,
+      passWord: e.detail.value.pwd
+    }
+    http.postRequest(http.loginUrl, params, function (data) {
+      wx.setStorageSync('user_info',  data);
+      wx.showToast({
+        title: "登录成功",
+        icon: 'success',
+        duration: 2000
+      })
+      wx.switchTab({
+        url: '../home/home',
+      })
+      
+    }, function (res) {
+      console.log("修改失败！！！")
+    })
+  
+  },
+/**
+ * 这个方法暂时没有用了
+ */
+httpPost:function(e){
+  wx.request({
+    url: app.url.login, //仅为示例，并非真实的接口地址
 
-      data: {
-        loginName: e.detail.value.no,
-        passWord: e.detail.value.pwd
-      },
-      method: 'POST',
-      header: {
-        "Content-Type": "application/x-www-form-urlencoded"
-      },
-      success: function(res) {
-        console.log("----data");
-        console.log(res.data);
-        if (res.statusCode == 200) {
-          if (res.data.code == 200) {
+    data: {
+      loginName: e.detail.value.no,
+      passWord: e.detail.value.pwd
+    },
+    method: 'POST',
+    header: {
+      "Content-Type": "application/x-www-form-urlencoded"
+    },
+    success: function (res) {
+      console.log("----data");
+      console.log(res.data);
+      if (res.statusCode == 200) {
+        if (res.data.code == 200) {
 
-            wx.setStorageSync('user_info', res.data.data);
-            wx.showToast({
-              title: "登录成功",
-              icon: 'success',
-              duration: 2000
-            })
-            wx.switchTab({
-              url: '../home/home',
-            })
-          } else {
-            wx.showToast({
-              title: res.data.msg ? res.data.msg : "",
-              icon: 'none',
-              duration: 2000
-            })
-          }
+          wx.setStorageSync('user_info', res.data.data);
+          wx.showToast({
+            title: "登录成功",
+            icon: 'success',
+            duration: 2000
+          })
+          wx.switchTab({
+            url: '../home/home',
+          })
         } else {
           wx.showToast({
-            title: '服务器出现错误',
+            title: res.data.msg ? res.data.msg : "",
             icon: 'none',
             duration: 2000
           })
         }
+      } else {
+        wx.showToast({
+          title: '服务器出现错误',
+          icon: 'none',
+          duration: 2000
+        })
       }
-    })
-  },
-
-
+    }
+  })
+},
 
 
   /**

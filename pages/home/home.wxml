@@ -5,7 +5,8 @@
   <!-- 导航栏 -->
   <scroll-view scroll-x class='swiper-nav' scroll-left='{{swiperNav.x}}' scroll-with-animation='true' bindtap='swiperNav'>
 
-    <text wx:for='{{swiperNav.arr}}' wx:key='{{index}}' class='item-nav {{swiperNav.i==index ? "active" : ""}}' data-i='{{index}}'>{{item.txt}}</text>
+    <text wx:for='{{swiperNav.arr}}' wx:key='{{index}}' class='item-nav {{swiperNav.i==index ? "active" : ""}}' data-i='{{index}}'>
+    {{item.txt}}</text>
   </scroll-view>
 
 

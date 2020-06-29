@@ -138,11 +138,11 @@ Page({
     }
   },
   //js的代码
-  onPullDownRefresh: function (event) {
+  onPullDownRefresh: function(event) {
     wx.showNavigationBarLoading();
- 
 
-    setTimeout(function () {
+
+    setTimeout(function() {
       console.log("setTimeout");
       wx.hideNavigationBarLoading();
       wx.stopPullDownRefresh();
@@ -150,6 +150,10 @@ Page({
   },
   //listview点击事件
   onItemClickListener(event) {
+    var datasetid = event.currentTarget.dataset.i;
+    console.log("datasetid");
+    console.log(event.currentTarget);
+
     wx.navigateTo({
       url: "../orderDetail/orderDetail"
     });

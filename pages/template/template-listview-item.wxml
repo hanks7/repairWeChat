@@ -1,5 +1,5 @@
 <template name="template-listview-item">
-  <view class="tui-menu-list" wx:for="{{arryList}}" catchtap="onItemClickListener">
+  <view class="tui-menu-list" wx:for="{{arryList}}" data-i='{{index}}' catchtap="onItemClickListener">
     <view class="textColor">工 单 号 : {{item}}</view>
     <view class="textColor">工单标题 : {{item}}</view>
     <view class="textColor">工单描述 : {{item}}</view>
