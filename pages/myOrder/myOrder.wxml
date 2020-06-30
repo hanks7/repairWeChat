@@ -1,2 +1,2 @@
 <import src="../template/template-listview-item.wxml" />
-<template is="template-listview-item" data="{{arryList}}" />
+<template is="template-listview-item" data="{{result}}" />

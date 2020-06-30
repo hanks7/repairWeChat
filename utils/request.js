@@ -2,6 +2,7 @@ var app = getApp(); //获取小程序全局唯一app实例
 var host = "http://172.16.0.51:8600/api/"; //接口地址
 
 
+//var http = require('../../utils/request.js'); //相对路径
 //url：接口
 //postData：参数
 //doSuccess：成功的回调函数
@@ -21,11 +22,13 @@ function request(url, postData, method, doSuccess, doFail) {
   wx.showLoading({
     title: "正在加载中...",
   })
+  console.log("params");
+  console.log(postData);
   wx.request({
       url: host + url, //请求地址
       method: method, //请求方法
       header: { //请求头
-        "Content-Type": "application/x-www-form-urlencoded"
+        'content-type': 'application/json'
       },
       data: postData, //请求参数    
       dataType: 'json', //返回数据格式
@@ -73,5 +76,6 @@ function request(url, postData, method, doSuccess, doFail) {
   module.exports = {
     postRequest: post,
     getRequest: get,
-    loginUrl: "login"
+    loginUrl: "login",
+    jobListUrl:"jobList"
   }
