@@ -73,20 +73,31 @@ Page({
       })
     var params = { //请求参数
       token: this.data.userInfo.Token,
-      pageIndex: 1,
+      pageIndex: i,
       pageSize: 10,
       type: 0
     }
     var that = this;
     http.postRequest(http.jobListUrl, params, function(data) {
+      if (data.list.length < 10) {
+        wx.showToast({
+          title: '没有更多数据了！',
+        })
+        return;
+      }
 
-      that.data.result.list.push(data.list);
+      var ttt = that.data.result.list.concat(data.list);
+      that.data.result.list = ttt;
 
       that.setData({
         result: that.data.result
       });
       wx.stopPullDownRefresh();
       wx.hideNavigationBarLoading();
+    }, function(data) {
+      that.setData({
+        pageIndex: i--
+      })
     })
 
 
