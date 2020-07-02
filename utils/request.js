@@ -46,7 +46,7 @@ function request(url, postData, method, doSuccess, doFail) {
               icon: 'none',
               duration: 2000
             })
-            doFail();
+            doFail(res.data.msg ? res.data.msg : "错误代码 " + res.data.code +" ：请联系管理员");
           }
         }else{
           wx.showToast({
@@ -54,7 +54,7 @@ function request(url, postData, method, doSuccess, doFail) {
             icon: 'none',
             duration: 2000
           })
-          doFail();
+          doFail('服务器出现错误');
         }
           //成功执行方法，参数值为res.data,直接将返回的数据传入
 
@@ -67,7 +67,7 @@ function request(url, postData, method, doSuccess, doFail) {
             duration: 2000
           })
           //失败执行方法
-          doFail();
+          doFail('服务器出现错误');
         },
       })
   }

@@ -25,7 +25,7 @@ Page({
       wx.redirectTo({
         url: "../login/login"
       });
-    }, 2000);
+    }, 100);
 
   },
 

@@ -3,5 +3,9 @@
     <view class="textColor">工 单 号 : {{item.RequisitionNo}}</view>
     <view class="textColor">工单标题 : {{item.Title}}</view>
     <view class="textColor">申请时间 : {{item.RequisitionDate}}</view>
+  
   </view>
+
+ <view class="{{result.showEmptyView?'header_view_show':'header_view_hide'}}">{{result.showEmptyText}}</view>
+
 </template>
