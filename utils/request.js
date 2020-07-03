@@ -1,5 +1,7 @@
 var app = getApp(); //获取小程序全局唯一app实例
 var host = "http://172.16.0.51:8600/api/"; //接口地址
+var baseImgUrl="http://172.16.0.50:8681/MdsAppendixDir/MaintenanceFile/";//图片基础地址
+
 
 
 //var http = require('../../utils/request.js'); //相对路径
@@ -19,7 +21,7 @@ function get(url, postData, doSuccess, doFail) {
 }
 
 function request(url, postData, method, doSuccess, doFail) {
-  wx.showLoading({
+  wx.showLoading({//显示dialog
     title: "正在加载中...",
   })
   console.log("params");
@@ -36,7 +38,7 @@ function request(url, postData, method, doSuccess, doFail) {
       success: function(res) {
         console.log("----data");
         console.log(res );
-        wx.hideLoading();
+        wx.hideLoading();//隐藏dialog
         if (res.statusCode == 200) {
           if (res.data.code == 200) {
             doSuccess(res.data.data);
@@ -76,6 +78,10 @@ function request(url, postData, method, doSuccess, doFail) {
   module.exports = {
     postRequest: post,
     getRequest: get,
+    host:host,
     loginUrl: "login",
-    jobListUrl:"jobList"
+    jobListUrl:"jobList", 
+    jobDetail:"jobDetail",
+    jobStatus:"jobStatus",
+    baseImgUrl:baseImgUrl
   }

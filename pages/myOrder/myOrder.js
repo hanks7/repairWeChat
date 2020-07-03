@@ -32,7 +32,7 @@ Page({
 
     this.setData({
       userInfo: userInfo,
-     
+
     })
 
     this.httpFirst();
@@ -68,7 +68,7 @@ Page({
 
       if (data.list.length <= 0) {
         data.showEmptyView = true;
-        data.showEmptyText = "没有工单";        
+        data.showEmptyText = "没有工单";
       }
 
       that.setData({
@@ -148,8 +148,12 @@ Page({
 
   //listview点击事件
   onItemClickListener(event) {
+    var index = event.currentTarget.dataset.i;
+  
+    var HospitalApplyID = this.data.result.list[index].HospitalApplyID;
+ 
     wx.navigateTo({
-      url: "../orderDetail/orderDetail"
+      url: "../orderDetail/orderDetail?HospitalApplyID=" + HospitalApplyID
     });
   }
 })

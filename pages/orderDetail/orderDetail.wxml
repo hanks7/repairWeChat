@@ -1,13 +1,13 @@
 <view class="tv-title"> 问题描述</view>
-<view class='tv-problem-description'>问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述</view>
+<view class='tv-problem-description'>{{host}}</view>
 
 
 <view class="cast">
   <text class="cast-font">上报图片</text>
   <view class="cast-imgs">
-    <block wx:for="{{imglist}}" wx:for-index="idx">
+    <block wx:for="{{bean.data.fileList}}" wx:for-index="idx">
       <view class="cast-container">
-        <image class="cast-img" src="{{item}}" data-post-Id="{{idx}}" catchtap="onItemClickListener"></image>
+        <image class="cast-img" src="{{baseImgUrl}}{{item.ThumbPath}}" data-post-Id="{{idx}}" catchtap="onItemClickListener"></image>
       </view>
     </block>
   </view>
