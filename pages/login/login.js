@@ -66,7 +66,7 @@ httpPost:function(e){
 
     data: {
       loginName: e.detail.value.no,
-      passWord: e.detail.value.pwd
+      password: e.detail.value.pwd
     },
     method: 'POST',
     header: {
@@ -113,7 +113,7 @@ httpPost:function(e){
      
     var userInfo = wx.getStorageSync('user_info');
    
-    if (typeof (userInfo) == 'object' && userInfo.LoginName != '') {
+    if (typeof (userInfo) == 'object' && userInfo.Token != '') {
       wx.switchTab({
         url: '../home/home',
       })
