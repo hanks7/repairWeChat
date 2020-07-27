@@ -39,7 +39,7 @@ Page({
 
     var params = {//请求参数
       loginName: e.detail.value.no,
-      passWord: e.detail.value.pwd
+      password: e.detail.value.pwd
     }
     http.postRequest(http.loginUrl, params, function (data) {
       wx.setStorageSync('user_info',  data);

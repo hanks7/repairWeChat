@@ -1,6 +1,6 @@
 var app = getApp(); //获取小程序全局唯一app实例
-// var host = "http://172.16.0.51:8600/api/"; //测试接口地址 
-var host = "https://mt.easyway.com.cn/api/"; //正式接口地址
+var host = "http://172.16.0.51:8600/api/"; //测试接口地址 
+// var host = "https://mt.easyway.com.cn/api/"; //正式接口地址
 var baseImgUrl = "http://172.16.0.50:8681/MdsAppendixDir/MaintenanceFile/"; //图片基础地址
 
 

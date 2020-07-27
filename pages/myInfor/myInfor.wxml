@@ -2,7 +2,6 @@
 <view class="main">
   <image class="headimg" mode="aspectFit" src="/images/logo.png"></image>
   <text class="style-text name" >登录人名称：{{userInfo.LoginName}}</text>
-  <text class="style-text journey">登录人token：{{userInfo.Token}}</text>
 </view>
 
 <view class="item" bindtap="clickIntentMyorder">我的订单</view>
