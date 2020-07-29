@@ -145,10 +145,7 @@ Page({
   },
   formReset: function () {
     console.log('form发生了reset事件')
-  },
-  getInputValue(e) {
-    console.log(e.detail) // {value: "ff", cursor: 2}  
-  },
+  } 
 
 
 })

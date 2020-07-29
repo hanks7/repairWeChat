@@ -2,15 +2,15 @@
 
 
 <view class="movie-container">
-  <!-- 导航栏 -->
-  <scroll-view scroll-x class='swiper-nav' scroll-left='{{swiperNav.x}}' scroll-with-animation='true' bindtap='swiperNav'>
+	<!-- 导航栏 -->
+	<scroll-view scroll-x class='swiper-nav' scroll-left='{{swiperNav.x}}' scroll-with-animation='true' bindtap='swiperNav'>
 
-    <text wx:for='{{swiperNav.arr}}' wx:key='{{index}}' class='item-nav {{swiperNav.i==index ? "active" : ""}}' data-i='{{index}}'>
-    {{item.txt}}</text>
-  </scroll-view>
+		<text wx:for='{{swiperNav.arr}}' wx:key='{{index}}' class='item-nav {{swiperNav.i==index ? "active" : ""}}' data-i='{{index}}'>
+		{{item.txt}}</text>
+	</scroll-view>
 
 
-  <view class="tui-content">
-    <template is="template-listview-item" data="{{arryList}}" />
-  </view>
+	<view class="tui-content">
+		<template is="template-listview-item" data="{{result}}" />
+	</view>
 </view>
