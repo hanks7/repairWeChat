@@ -32,7 +32,7 @@ Page({
 
     host: http.host,
     baseImgUrl: http.baseImgUrl,
-    bean: {
+    bean2: {
       "code": "200",
       "msg": "",
       "data": {
@@ -99,33 +99,13 @@ Page({
   onLoad: function (options) {
     var HospitalApplyID = options.HospitalApplyID;
     console.log("HospitalApplyID:" + HospitalApplyID);
-
-
-    var params = { //请求参数
-      hospitalApplyID: HospitalApplyID
-    }
-    var that = this;
-    http.postRequest(http.jobDetail, params, function (data) {
-
-      wx.stopPullDownRefresh();
-      wx.hideNavigationBarLoading();
-    }, function (data) {
-      that.i--;
-      wx.stopPullDownRefresh();
-      wx.hideNavigationBarLoading();
-    })
-
-    var myList = new Array();
-    console.log("for循环");
-    for (var index in this.data.bean.data.fileList) {
-      myList.push(http.baseImgUrl+this.data.bean.data.fileList[index].Path)
-      
-    }
-    
     this.setData({
-      imglist:myList
+      HospitalApplyID: HospitalApplyID,
     });
-    console.log("this.data.imglist[0]"+this.data.imglist[0])
+ 
+    this.newFunction(this.data.HospitalApplyID);
+
+
 
 
 
@@ -141,11 +121,71 @@ Page({
   },
 
   formSubmit: function (e) {
-    console.log('form发生了submit事件，携带数据为：', e.detail.value)
+    wx.showNavigationBarLoading();
+    console.log('form发生了submit事件，携带数据为：')
+    console.log(e)
+
+    var params = { //请求参数
+      hospitalApplyID: this.data.HospitalApplyID,
+      remark: e.detail.value.remark
+    }
+    var that = this;
+    http.postRequest(http.jobStatus, params, function (data) {
+     
+     
+      that.newFunction(that.data.HospitalApplyID);
+
+      wx.stopPullDownRefresh();
+      wx.hideNavigationBarLoading();
+    }, function (data) {
+   
+      wx.stopPullDownRefresh();
+      wx.hideNavigationBarLoading();
+    })
+
+
+
   },
   formReset: function () {
     console.log('form发生了reset事件')
-  } 
+  },
+  //js的代码  更新事件
+  onPullDownRefresh: function (event) {
+ 
+    wx.showNavigationBarLoading();
+    this.newFunction(this.data.HospitalApplyID);
+  },
 
+  newFunction(HospitalApplyID) {
+
+    var params = {
+      hospitalApplyID: HospitalApplyID
+    };
+    var that = this;
+    http.postRequest(http.jobDetail, params, function (data) {
+
+      var myList = new Array();
+      for (var index in data.fileList) {
+
+        myList.push(http.baseImgUrl + data.fileList[index].ThumbPath);
+      }
+      that.setData({
+        bean: data,
+        imglist: myList
+      });
+      console.log("this.data.imglist[0]" + that.data.imglist[0]);
+      wx.stopPullDownRefresh();
+      wx.hideNavigationBarLoading();
+      wx.showToast({
+        title: "成功",
+        icon: 'success',
+        duration: 2000
+      });
+    }, function (data) {
+  
+      wx.stopPullDownRefresh();
+      wx.hideNavigationBarLoading();
+    });
+  } 
 
 })

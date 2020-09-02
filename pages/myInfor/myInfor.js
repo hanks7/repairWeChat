@@ -68,9 +68,14 @@ Page({
   onShareAppMessage: function() {
 
   },
-  clickIntentMyorder(event) {
+  clickIntentMyorder(event) {   
     wx.navigateTo({
       url: "../myOrder/myOrder"
+    });
+  },
+  clickIntentHistoryOrder(event) {  
+    wx.navigateTo({
+      url: "../historyOrder/historyOrder"
     });
   },
 

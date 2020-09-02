@@ -1,38 +1,28 @@
-@import "../template/template-listview-item.wxss";
+ 
 
 page {
-  background-color: #efefef;
+  background-color: #ffffff;
 }
 
-/*横向导航*/
+.main {
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 240px;
+  background-color: #9bd9f0;
+}
+ 
 
-.swiper-nav {
-  position: sticky;
-  top: 0;
-  background-color: #fff;
-  white-space: nowrap;
+.style-text {
+  margin-top: 12rpx;
+  font-weight: bold;
 }
 
-.swiper-nav .item-nav {
-  position: relative;
-  padding: 30rpx 32rpx;
-  color: #999;
-  font-size: 30rpx;
+.item {
   cursor: pointer;
-  display: inline-block;
-}
-
-.swiper-nav .active {
-  color: #1387e6;
-}
-
-.swiper-nav .active::after {
-  content: '';
-  position: absolute;
-  left: 32rpx;
-  right: 32rpx;
-  height: 0;
-  border-bottom: 4rpx solid #1387e6;
-  border-radius: 4rpx;
-  bottom: 18rpx;
+  color: #7f8384;
+  padding-left: 24rpx;
+  border-bottom: 1rpx #d8d8d8 solid;
+  line-height: 120rpx;
 }

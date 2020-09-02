@@ -1,16 +1,8 @@
 <import src="../template/template-listview-item.wxml" />
 
 
-<view class="movie-container">
-	<!-- 导航栏 -->
-	<scroll-view scroll-x class='swiper-nav' scroll-left='{{swiperNav.x}}' scroll-with-animation='true' bindtap='swiperNav'>
 
-		<text wx:for='{{swiperNav.arr}}' wx:key='{{index}}' class='item-nav {{swiperNav.i==index ? "active" : ""}}' data-i='{{index}}'>
-		{{item.txt}}</text>
-	</scroll-view>
-
-
-	<view class="tui-content">
-		<template is="template-listview-item" data="{{result}}" />
-	</view>
-</view>
+<view class="item" bindtap="clickIntentAllOrder">所有订单</view>
+<view class="item" bindtap="clickIntentCompanyOrder">公司派单</view>
+<view class="item" bindtap="clickIntentHospitalOrder">医院工单</view>
+<view class="item" bindtap="clickIntentConfirmedorder">需要确认的订单</view>

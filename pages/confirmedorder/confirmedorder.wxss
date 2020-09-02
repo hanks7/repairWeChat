@@ -1,2 +1,2 @@
-/* pages/companyOrder/companyOrder.wxss */
+/* pages/confirmedorder/confirmedorder.wxss */
 @import "../template/template-listview-item.wxss";

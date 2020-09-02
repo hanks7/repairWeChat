@@ -53,7 +53,7 @@ Page({
       token: this.data.userInfo.Token,
       pageIndex: this.i,
       pageSize: 10,
-      type: 2//0 所有工单 ,1 医院工单,   2 企业工单, 3 获取所有待确认的工单 4 历史订单
+      type: 4//0 所有工单 ,1 医院工单,   2 企业工单, 3 获取所有待确认的工单 4 历史订单
       
      
       

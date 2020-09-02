@@ -8,16 +8,20 @@
     "pages/logs/logs",
     "pages/home/home",
     "pages/myOrder/myOrder",
-    "pages/companyOrder/companyOrder"
+    "pages/companyOrder/companyOrder",
+    "pages/hospitalOrder/hospitalOrder",
+    "pages/confirmedorder/confirmedorder",
+    "pages/historyOrder/historyOrder",
+    "pages/allOrder/allOrder"
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
+    "navigationBarBackgroundColor": "#ffffff",
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
-    "borderStyle": "white",
+    "borderStyle": "green",
     "position": "bottom",
     "selectedColor": "#1285E5",
     "color": "#8E8E8E",

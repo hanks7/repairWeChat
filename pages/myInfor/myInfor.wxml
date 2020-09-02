@@ -1,11 +1,10 @@
-<!--pages/myInfor/myInfor.wxml-->
+<!--pages/myInfor/myInfor.wxml historyOrder--> 
 <view class="main">
   <image class="headimg" mode="aspectFit" src="/images/logo.png"></image>
   <text class="style-text name" >登录人名称：{{userInfo.LoginName}}</text>
 </view>
 
 <view class="item" bindtap="clickIntentMyorder">我的订单</view>
-<view class="item" bindtap="clickIntentMyorder">公司派单</view>
-<view class="item" bindtap="clickIntentMyorder">需要确认的订单</view>
+<view class="item" bindtap="clickIntentHistoryOrder">历史工单</view>
 <view class="item" bindtap="clickQuit">退出登录</view>
  
