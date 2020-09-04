@@ -156,7 +156,7 @@ Page({
     var HospitalApplyID = this.data.result.list[index].HospitalApplyID;
  
     wx.navigateTo({
-      url: "../orderDetail/orderDetail?HospitalApplyID=" + HospitalApplyID
+      url: "../receiveOrder/receiveOrder?HospitalApplyID=" + HospitalApplyID
     });
   }
 })

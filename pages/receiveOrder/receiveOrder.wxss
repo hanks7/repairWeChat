@@ -1,0 +1,151 @@
+.tv-title {
+  color: #999;
+  margin: 24rpx;
+  margin-left: 36rpx;
+}
+
+.tv-problem-description {
+  font-size: 13px;
+  color: green;
+  line-height: 40rpx;
+  margin-left: 36rpx;
+  margin-right: 36rpx;
+}
+
+.cast {
+  margin-left: 36rpx;
+  display: flex;
+  flex-direction: column;
+  margin-top: 50rpx;
+}
+
+.cast-font {
+  color: #999;
+  margin-bottom: 40rpx;
+}
+
+.cast-imgs {
+  width: 650rpx;
+}
+
+.cast-container {
+  display: inline-flex;
+  flex-direction: row;
+  margin-bottom: 5rpx;
+  margin-right: 8rpx;
+  text-align: center;
+  white-space: normal;
+}
+
+.cast-img {
+  width: 160rpx;
+  height: 160rpx;
+}
+
+.cast-name {
+  margin: 3rpx auto 0;
+}
+
+/* 时间轴 */
+
+.page-title {
+  color: #999;
+  margin: 24rpx;
+  margin-left: 36rpx;
+}
+
+.weui-cell-third {
+  background: #fff;
+}
+
+.weui-cell-list {
+  background-color: red;
+  background: #fff;
+  margin: 5px 50px 5px 50px;
+}
+
+/* 一条竖线 */
+
+.weui-cell-line {
+  font-size: 11px;
+  padding-left: 24rpx;
+  padding-right: 24rpx;
+  margin-left: 5px;
+  border-left: 1px solid rgb(221, 221, 221);
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  color: grey;
+}
+
+.weui-cell-list:nth-child(2) .weui-cell-line {
+  border-left: 1px solid green;
+  color: green;
+}
+
+/* 圆点 */
+
+.weui-cell-circle {
+  margin-bottom: 5px;
+  border-radius: 5px;
+  width: 10px;
+  height: 10px;
+  background-color: grey;
+}
+
+.weui-cell-list:nth-child(2) .weui-cell-circle {
+  background-color: green;
+}
+
+.weui-cell-event {
+  white-space: pre-line;
+  overflow-wrap: break-word;
+  margin: 12rpx 0;
+}
+
+.view-repair-state {
+  min-height: 120rpx;
+  margin: 24rpx;
+  padding: 22rpx;
+  border: 1rpx solid #d8d8d8;
+  vertical-align: top;
+  border-radius: 15rpx;
+}
+
+.input-repair-state {
+  width: 100%;
+}
+
+.loginBtnView {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+
+.loginBtn {
+  width: 90%;
+  height: 80rpx;
+  line-height: 80rpx;
+  margin-top: 35rpx;
+  margin-bottom: 35rpx;
+  color: #fff;
+  background-color: #006990;
+  border: 0.1rpx solid #ccc;
+  border-radius: 40rpx;
+  cursor: pointer;
+ 
+}
+
+.loginBtn-pressed {
+  width: 90%;
+  height: 80rpx;
+  line-height: 80rpx;
+  margin-top: 35rpx;
+  margin-bottom: 35rpx;
+  color: #fff;
+  background-color: #004e6b;
+  border: 0.1rpx solid #004e6b;
+  border-radius: 40rpx;
+}
+
+ 

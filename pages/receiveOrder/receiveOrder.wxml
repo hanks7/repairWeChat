@@ -1,0 +1,40 @@
+<view class="tv-title"> 问题描述</view>
+<view class='tv-problem-description'>{{bean.CauseContent}}</view>
+
+
+<view class="cast">
+	<text class="cast-font">上报图片</text>
+	<view class="cast-imgs">
+		<block wx:for="{{bean.fileList}}" wx:for-index="idx">
+			<view class="cast-container">
+				<image class="cast-img" src="{{baseImgUrl}}{{item.ThumbPath}}" data-post-Id="{{idx}}" catchtap="onItemClickListener"></image>
+			</view>
+		</block>
+	</view>
+</view>
+
+<view class='weui-cell-third'>
+	<!-- 参考文献
+https://blog.csdn.net/oschina_41661541/article/details/81217619?depth_1-utm_source=distribute.pc_relevant.none-task-blog-OPENSEARCH-3&utm_source=distribute.pc_relevant.none-task-blog-OPENSEARCH-3 -->
+	<view class="page-title">维修动态</view>
+	<block wx:for="{{bean.history}}" wx:key="*this">
+		<view class='weui-cell-list'>
+
+			<view class='weui-cell-circle'></view>
+
+			<view class='weui-cell-line'>
+
+				<view class='weui-cell-name'>{{item.UserName}}</view>
+				<view class='weui-cell-event'>{{item.Remark}}</view>
+				<view class='weui-cell-time'>{{item.CreateTime}}</view>
+			</view>
+
+		</view>
+
+	</block>
+</view>
+
+<!--按钮-->
+<view class="loginBtnView">
+	<button class="loginBtn" hover-class="loginBtn-pressed" formType="submit" from="formID">接单</button>
+</view>

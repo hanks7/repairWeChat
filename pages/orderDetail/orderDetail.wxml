@@ -37,7 +37,7 @@ https://blog.csdn.net/oschina_41661541/article/details/81217619?depth_1-utm_sour
 <form bindsubmit="formSubmit" id="formID" bindreset="formReset">
 
  <view class="view-repair-state">
-  <textarea  class="input-repair-state" maxlength="100000" bindinput='getInputValue' name='remark' type='text' placeholder='请输入维修状态'>
+  <textarea  class="input-repair-state" maxlength="100000" bindinput='getInputValue' value="{{stateContent}}" name='remark' type='text' placeholder='请输入维修状态'>
  
   </textarea >
   </view>

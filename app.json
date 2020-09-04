@@ -12,7 +12,8 @@
     "pages/hospitalOrder/hospitalOrder",
     "pages/confirmedorder/confirmedorder",
     "pages/historyOrder/historyOrder",
-    "pages/allOrder/allOrder"
+    "pages/allOrder/allOrder",
+    "pages/receiveOrder/receiveOrder"
   ],
   "window": {
     "backgroundTextStyle": "light",
