@@ -8,16 +8,18 @@ Page({
   data: {
     host: http.host,
     baseImgUrl: http.baseImgUrl,
-  
+    isShow:true
 
 
   },
 
   onLoad: function (options) {
     var HospitalApplyID = options.HospitalApplyID;
+    var Token=options.Token;
     console.log("HospitalApplyID:" + HospitalApplyID);
     this.setData({
       HospitalApplyID: HospitalApplyID,
+      Token:Token
     });
 
     this.getDetailInfo(this.data.HospitalApplyID);
@@ -107,6 +109,43 @@ Page({
         stateContent: ""
       });
       console.log("this.data.imglist[0]" + that.data.imglist[0]);
+      wx.stopPullDownRefresh();
+      wx.hideNavigationBarLoading();
+
+    }, function (data) {
+
+      wx.stopPullDownRefresh();
+      wx.hideNavigationBarLoading();
+    });
+  },
+  clickBtn(event) {
+    var params = {
+      Token:this.data.Token,
+      hospitalApplyID: this.data.HospitalApplyID,
+      confirmNum:1,
+      remark:""
+    };
+    var that = this;
+    http.postRequest(http.jobConfirm, params, function (data) {
+
+      wx.stopPullDownRefresh();
+      wx.hideNavigationBarLoading();
+      that.setData({
+       isShow:false
+      });
+
+      wx.showToast({
+        title: "成功",
+        icon: 'success',
+        duration: 2000,
+        complete: function () {
+          setTimeout(function () {
+            that.getDetailInfo(that.data.HospitalApplyID);
+          }, 2400)
+
+        }
+      });
+       
       wx.stopPullDownRefresh();
       wx.hideNavigationBarLoading();
 

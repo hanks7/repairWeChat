@@ -87,5 +87,6 @@ module.exports = {
   jobListUrl: "jobList",
   jobDetail: "jobDetail",
   jobStatus: "jobStatus",
+  jobConfirm: "jobConfirm",
   baseImgUrl: baseImgUrl
 }
