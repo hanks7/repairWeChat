@@ -9,66 +9,8 @@ Page({
     host: http.host,
     baseImgUrl: http.baseImgUrl,
     stateContent: "",
-    bean2: {
-      "code": "200",
-      "msg": "",
-      "data": {
-        "CauseContent": "WXSQ202006090001",
-        "RequisitionNo": "2230",
-        "UrgentType": "12351",
-        "fileList": [{
-          "FileName": "0018EUjnzy7mG1UaMoG4a.gif",
-          "HospitalApplyDetailID": "0020200609000000011F",
-          "ThumbPath": "0020200609000000011F.gif",
-          "Path": "0020200609000000011F.gif",
-          "CreateTime": "2020-06-09 13:44:20.490",
-          "Title": "0018EUjnzy7mG1UaMoG4a.gif"
-        }, {
-          "FileName": "0018EUjnzy7mG1UaMoG4a.gif",
-          "HospitalApplyDetailID": "0020200609000000011F",
-          "ThumbPath": "0020200609000000011F.gif",
-          "Path": "0020200609000000011F.gif",
-          "CreateTime": "2020-06-09 13:44:20.490",
-          "Title": "0018EUjnzy7mG1UaMoG4a.gif"
-        }, {
-          "FileName": "0018EUjnzy7mG1UaMoG4a.gif",
-          "HospitalApplyDetailID": "0020200609000000011F",
-          "ThumbPath": "0020200609000000011F.gif",
-          "Path": "0020200609000000011F.gif",
-          "CreateTime": "2020-06-09 13:44:20.490",
-          "Title": "0018EUjnzy7mG1UaMoG4a.gif"
-        }],
-        "history": [{
-            "Remark": "开始维修",
-            "UserName": "zs001",
-            "HistoryID": "00202006230000001001",
-            "CreateTime": "2020-06-24 09:38:44.130",
-            "RepairPersonID": "002020062200000007fe"
-          },
-          {
-            "Remark": "1001",
-            "UserName": "程占柱",
-            "HistoryID": "0020200624000000021C",
-            "CreateTime": "2020-06-24 10:11:38.447",
-            "RepairPersonID": "002020062200000006d9"
-          },
-          {
-            "Remark": "1002",
-            "UserName": "程占柱",
-            "HistoryID": "0020200624000000035A",
-            "CreateTime": "2020-06-24 10:11:57.097",
-            "RepairPersonID": "002020062200000006d9"
-          },
-          {
-            "Remark": "1003",
-            "UserName": "程占柱",
-            "HistoryID": "002020062400000004EA",
-            "CreateTime": "2020-06-24 10:31:42.853",
-            "RepairPersonID": "002020062200000006d9"
-          }
-        ]
-      }
-    }
+    array: ['正在处理', '维修完成' ],
+ 
 
 
   },
@@ -105,7 +47,7 @@ Page({
 
     var params = { //请求参数
       hospitalApplyID: this.data.HospitalApplyID,
-      remark: e.detail.value.remark
+      remark: this.data.array[this.data.index]+":"+e.detail.value.remark
     }
     var that = this;
     http.postRequest(http.jobStatus, params, function (data) {
@@ -124,7 +66,7 @@ Page({
         complete: function () {
           setTimeout(function () {
             that.getDetailInfo(that.data.HospitalApplyID);
-          }, 2400)
+          }, 2100)
 
         }
       });
@@ -175,6 +117,12 @@ Page({
       wx.stopPullDownRefresh();
       wx.hideNavigationBarLoading();
     });
+  },
+  bindPickerChange: function(e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      index: e.detail.value
+    })
   }
 
 })

@@ -3,53 +3,62 @@
 
 
 <view class="cast">
-  <text class="cast-font">上报图片</text>
-  <view class="cast-imgs">
-    <block wx:for="{{bean.fileList}}" wx:for-index="idx">
-      <view class="cast-container">
-        <image class="cast-img" src="{{baseImgUrl}}{{item.ThumbPath}}" data-post-Id="{{idx}}" catchtap="onItemClickListener"></image>
-      </view>
-    </block>
-  </view>
+	<text class="cast-font">上报图片</text>
+	<view class="cast-imgs">
+		<block wx:for="{{bean.fileList}}" wx:for-index="idx">
+			<view class="cast-container">
+				<image class="cast-img" src="{{baseImgUrl}}{{item.ThumbPath}}" data-post-Id="{{idx}}" catchtap="onItemClickListener"></image>
+			</view>
+		</block>
+	</view>
 </view>
 
 <view class='weui-cell-third'>
-  <!-- 参考文献
+	<!-- 参考文献
 https://blog.csdn.net/oschina_41661541/article/details/81217619?depth_1-utm_source=distribute.pc_relevant.none-task-blog-OPENSEARCH-3&utm_source=distribute.pc_relevant.none-task-blog-OPENSEARCH-3 -->
-  <view class="page-title">维修动态</view>
-  <block wx:for="{{bean.history}}" wx:key="*this">
-    <view class='weui-cell-list'>
+	<view class="page-title">维修动态</view>
+	<block wx:for="{{bean.history}}" wx:key="*this">
+		<view class='weui-cell-list'>
 
-      <view class='weui-cell-circle'></view>
+			<view class='weui-cell-circle'></view>
 
-      <view class='weui-cell-line'>
+			<view class='weui-cell-line'>
 
-        <view class='weui-cell-name'>{{item.UserName}}</view>
-        <view class='weui-cell-event'>{{item.Remark}}</view>
-        <view class='weui-cell-time'>{{item.CreateTime}}</view>
-      </view>
+				<view class='weui-cell-name'>{{item.UserName}}</view>
+				<view class='weui-cell-event'>{{item.Remark}}</view>
+				<view class='weui-cell-time'>{{item.CreateTime}}</view>
+			</view>
 
-    </view>
+		</view>
 
-  </block>
+	</block>
 </view>
 
-<form bindsubmit="formSubmit" id="formID" bindreset="formReset">
+<form bindsubmit="formSubmit" id="formID" bindreset="formReset" class="loginBtnForm">
 
- <view class="view-repair-state">
-  <textarea  class="input-repair-state" maxlength="100000" bindinput='getInputValue' value="{{stateContent}}" name='remark' type='text' placeholder='请输入维修状态'>
+	<view class="view-repair-state">
+		<textarea class="input-repair-state" maxlength="100000" bindinput='getInputValue' value="{{stateContent}}" name='remark' type='text' placeholder='请输入维修状态'>
+
+  </textarea>
+	</view>
+
+	<view class="tv-title">提交状态</view>
+	<view class="section">
+
+		<picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+			<view class="picker tv-title">
+				当前选择：{{array[index]}}
+			</view>
+		</picker>
+	</view>
+
+	<!--按钮-->
+	<view class="loginBtnView">
+		<button class="loginBtn" hover-class="loginBtn-pressed" formType="submit" from="formID">提交</button>
+	</view>
+
+<view class="view-bottom">
  
-  </textarea >
-  </view>
-
-  <!--按钮-->
-  <view class="loginBtnView">
-    <button class="loginBtn" hover-class="loginBtn-pressed" formType="submit" from="formID">提交状态</button>
-  </view>
-
-   <!--按钮-->
-  <view class="space">
-   
-  </view>
+</view>
 
 </form>

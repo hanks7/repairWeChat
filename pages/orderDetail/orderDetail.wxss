@@ -115,24 +115,28 @@
 .input-repair-state {
   width: 100%;
 }
-
+.loginBtnForm{
+ 
+  padding-bottom: 50rpx;
+}
 .loginBtnView {
-  margin-top: 0px;
-  margin-bottom: 0px;
-  padding-bottom: 0px;
+  margin-top: 0rpx;
+  margin-bottom: 100rpx;
+  padding-bottom: 50rpx;
 }
 
 .loginBtn {
   width: 90%;
   height: 80rpx;
   line-height: 80rpx;
-  margin-top: 35px;
+  margin-top: 35rpx;
   color: #fff;
   background-color: #006990;
   border: 0.1rpx solid #ccc;
   border-radius: 40rpx;
   cursor: pointer;
  
+
 }
 
 .loginBtn-pressed {
@@ -146,7 +150,22 @@
   border-radius: 40rpx;
 }
 
-.space{
+.space {
   height: 300rpx;
   width: 100%;
+}
+
+.section__title {
+  float: left;
+  color: #999;
+  margin: 24rpx;
+  margin-left: 36rpx;
+
+}
+
+.picker {
+ 
+padding: 12rpx 0;
+ 
+  border-bottom: 1px solid #999;
 }
