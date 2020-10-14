@@ -38,3 +38,7 @@ https://blog.csdn.net/oschina_41661541/article/details/81217619?depth_1-utm_sour
 <view class="loginBtnView" wx:if="{{isShow}}">
 	<button class="loginBtn" hover-class="loginBtn-pressed" formType="submit" from="formID" bindtap="clickBtn">接单</button>
 </view>
+
+<view class="view-bottom">
+ 
+</view>
